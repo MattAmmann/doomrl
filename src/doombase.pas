@@ -408,7 +408,7 @@ repeat
     if State = DSSaving then
     begin
       WriteSaveFile;
-      UI.MsgEnter('Game saved. Press <Enter> to exit.');
+      UI.MsgEnter('Game saved. Press <'+Config.GetKeyBinding(COMMAND_OK)+'> to exit.');
     end;
     if State = DSFinished then
     begin
