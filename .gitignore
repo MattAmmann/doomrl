@@ -16,3 +16,4 @@ bin/mortem/*
 !bin/mortem/!readme.txt
 bin/mortem.txt
 bin/info.xml
+src/backup/*
