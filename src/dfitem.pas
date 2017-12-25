@@ -480,6 +480,12 @@ begin
 
   if (IF_SINGLEMOD in FFlags) and (iSum > 0) then Exit(False);
 
+  // Allow single assembly for Whiz 2 players, if item has no mods
+  if (IF_ASSEMBLED in FFlags) then
+  begin
+    if (Player.TechBonus < 2) or (iSum > 0) then Exit(False);
+  end;
+
   if FProps.IType = ITEMTYPE_RANGED
     then iMax := 1 + 2* Player.TechBonus
     else iMax := 1 + Player.TechBonus;
