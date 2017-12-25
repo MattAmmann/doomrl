@@ -1,8 +1,9 @@
 ### Changelog
-##### Changes to the game since the last full DRL release (0.9.9.7):
+##### Changes to DRL since the last full release (0.9.9.7):
 
 Change | Description | Author | Date
 -- | -- | -- | -- |
+doc|Added detailed compiling instructions, a table-formatted changelog, and updated readme.|Matt Ammann|12/25/2017
 fix|Fixed bug that crashes game if player won or died after loading old game.|VedVid|4/11/2017
 add|Description for badges and medals in mortem.txt|DRL Dev Team|12/6/2016
 add|Event added: darkness|DRL Dev Team|12/6/2016
