@@ -13,10 +13,10 @@ I created this fork with several goals in mind:
 * Improve documentation, and update changelog with each commit
 
 ## Changelog
-Check out [Changelog.md](https://github.com/MattAmmann/doomrl/doc/Changelog.md) for the latest changes in an easy-to-read table. The newest changes are at the top.
+Check out [Changelog.md](doc/Changelog.md) for the latest changes in an easy-to-read table. The newest changes are at the top.
 
 ## How to build doomrl from the source code
-Please read [Compiling.md](https://github.com/MattAmmann/doomrl/doc/Compiling.md). 
+Please read [Compiling.md](doc/Compiling.md). 
 
 ## Credits
 All code is (C) 2003-2016 Kornel Kisielewicz.
