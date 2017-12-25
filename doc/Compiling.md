@@ -1,6 +1,6 @@
 * [Windows](#windows)
-  * [Setting up your build environment](#Setting-up-your-build-environment)
-  * [Compiling the game](#Compiling-the-game)
+  * [Setting up your build environment](#setting-up-your-build-environment)
+  * [Compiling the game](#compiling-the-game)
 
 ## Windows
 ### Setting up your build environment
