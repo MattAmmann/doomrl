@@ -3,6 +3,7 @@
 
 Change | Description | Author | Date
 -- | -- | -- | -- |
+mod|All assemblies are now moddable when the player takes the Whizkid 2 trait, regardless of when the assemblies were created. Assemblies can only be modded once, as in vanilla DRL.|Matt Ammann|12/25/2017
 doc|Added detailed compiling instructions, a table-formatted changelog, and updated readme.|Matt Ammann|12/25/2017
 fix|Fixed bug that crashes game if player won or died after loading old game.|VedVid|4/11/2017
 add|Description for badges and medals in mortem.txt|DRL Dev Team|12/6/2016
