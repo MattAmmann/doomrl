@@ -23,7 +23,7 @@ begin
   WAD.Add('lua/*.lua',FILETYPE_LUA,[vdfCompressed,vdfEncrypted], '' );
   WAD.Add('lua/levels/*.lua',FILETYPE_LUA,[vdfCompressed,vdfEncrypted], 'levels' );
   WAD.Add('lua/items/*.lua',FILETYPE_LUA,[vdfCompressed,vdfEncrypted], 'items' );
-  WAD.Add('font*.png',FILETYPE_IMAGE,[], 'fonts' );
+  WAD.Add('fonts/*.png',FILETYPE_IMAGE,[], 'fonts' );
   WAD.Add('graphics/*.png',FILETYPE_IMAGE,[], 'graphics' );
   WAD.Add('graphics/doom.ini', FILETYPE_ASCII, [], '' );
   WAD.Add('graphics/message.xml', FILETYPE_FONT, [], '' );
