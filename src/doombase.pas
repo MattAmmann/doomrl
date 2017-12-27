@@ -43,7 +43,6 @@ TDoom = class(TSystem)
        private
        function ModuleHookTable( Hook : Byte ) : AnsiString;
        procedure LoadModule( Base : Boolean );
-       procedure DoomFirst;
        procedure RunSingle;
        procedure CreatePlayer( aResult : TMenuResult );
        private
@@ -259,7 +258,9 @@ begin
   iResult    := TMenuResult.Create;
   Doom.Load;
 
-  if not FileExists(ConfigurationPath+'doom.prc') then DoomFirst;
+  // Open the 'Welcome' splash screen on first run of the game
+  if not FileExists(ConfigurationPath+'player.wad') then
+    IO.RunUILoop( TMainMenuViewer.CreateFirst( IO.Root ) );
 
   IO.RunUILoop( TMainMenuViewer.CreateMain( IO.Root ) );
   if FState <> DSQuit then
@@ -550,16 +551,6 @@ begin
   LuaSystem.SetValue('CHALLENGE',  Challenge);
   LuaSystem.SetValue('SCHALLENGE', SChallenge);
   LuaSystem.SetValue('ARCHANGEL', ArchAngel);
-end;
-
-procedure TDoom.DoomFirst;
-var T : Text;
-begin
-  Assign(T,ConfigurationPath+'doom.prc');
-  Rewrite(T);
-  Writeln(T,'Doom was already run.');
-  Close(T);
-  IO.RunUILoop( TMainMenuViewer.CreateFirst( IO.Root ) );
 end;
 
 procedure TDoom.RunSingle;
