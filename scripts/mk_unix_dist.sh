@@ -14,6 +14,7 @@ IS_SOUND="$3"
 shift 3
 
 BINDIR=../bin
+DOCDIR=../doc
 
 if [ -n "$IS_SOUND" ]; then
   SOUND_SUFFIX=''
@@ -34,7 +35,7 @@ mkdir "$DIST_TMP_PATH" "$DIST_TMP_PATH"mortem/ "$DIST_TMP_PATH"modules/ "$DIST_T
 cp -R "$BINDIR"/doomrl.wad \
       "$BINDIR"/manual.txt \
       "$BINDIR"/version.txt \
-      "$BINDIR"/unix_notes.txt \
+      "$DOCDIR"/unix_notes.txt \
       "$BINDIR"/colors.lua \
       "$BINDIR"/keybindings.lua \
       "$BINDIR"/sound.lua \
