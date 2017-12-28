@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="9"/>
+    <Version Value="10"/>
     <PathDelim Value="\"/>
     <General>
       <Flags>
@@ -13,7 +13,9 @@
       <MainUnit Value="0"/>
       <Title Value="Doom, the Roguelike"/>
       <UseAppBundle Value="False"/>
-      <Icon Value="0"/>
+      <Resources Count="1">
+        <Resource_0 FileName="..\bin\graphics\doomrl.ico" Type="ICON" ResourceName="MAINICON"/>
+      </Resources>
     </General>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
@@ -21,7 +23,7 @@
       <RevisionNr Value="9"/>
       <BuildNr Value="6"/>
       <CharSet Value="0000"/>
-      <StringTable CompanyName="ChaosForge" ProductName="Doom, the Roguelike" LegalCopyright="(c) 2002-2012 by Kornel Kisielewicz" ProductVersion="" FileDescription="Doom, the Roguelike"/>
+      <StringTable CompanyName="ChaosForge" ProductName="Doom, the Roguelike" LegalCopyright="(c) 2002-2012 by Kornel Kisielewicz" FileDescription="Doom, the Roguelike"/>
     </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="default" Default="True"/>
