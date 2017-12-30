@@ -129,8 +129,6 @@ end;
 
 function TMainMenuConMenu.OnConfirm : Boolean;
 begin
-  if FSound then
-    Sound.PlaySample('menu.pick');
   Result := inherited OnConfirm;
 end;
 
@@ -517,10 +515,17 @@ end;
 function TMainMenuViewer.OnPickMain( aSender : TUIElement ) : Boolean;
 var iMenu       : TConUIMenu;
     iFull       : TUIFullWindow;
+    FSound      : Boolean;
 begin
   iMenu := aSender as TConUIMenu;
   DestroyChildren;
   iFull := nil;
+
+  // Play sound if selected item isn't Quit
+  FSound  := Option_Sound and Option_MenuSound and (Sound <> nil);
+  if FSound and (iMenu.Selected <> 7) then
+    Sound.PlaySample('menu.pick');
+
   case iMenu.Selected of
     1 : if not Doom.SaveExists then
         begin
