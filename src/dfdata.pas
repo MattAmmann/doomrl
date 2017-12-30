@@ -95,7 +95,7 @@ type
 
 const
 {$include ../bin/core/constants.lua}
-{$include ../bin/dkey.inc}
+{$include dkey.inc}
 
 const
   COMMAND_MMOVE    = 240;

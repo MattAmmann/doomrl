@@ -28,7 +28,7 @@ begin
   WAD.Add('graphics/doom.ini', FILETYPE_ASCII, [], '' );
   WAD.Add('graphics/message.xml', FILETYPE_FONT, [], '' );
 
-  Assign(KeyFile,'dkey.inc');
+  Assign(KeyFile,'../src/dkey.inc');
   Rewrite(KeyFile);
   Write(KeyFile,'const LoveLace : TIDEAKey = ( ');
   for Count := Low(DKKey) to High(DKKey)-1 do
