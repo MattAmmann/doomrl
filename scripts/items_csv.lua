@@ -1,4 +1,4 @@
-dofile("lua/constants.lua")
+dofile("../lua/core/constants.lua")
 DoomRL = {}
 items = {}
 
@@ -14,7 +14,7 @@ function registeritem(ID,sID,name,level,weight,typ,flags)
   csv:write(ID..", "..name..", "..(level or 0)..", "..(weight or 0)..", "..typ.."\n");
 end
 
-dofile("lua/items.lua")
+dofile("../lua/items/items.lua")
 
 DoomRL.loaditems()
 
