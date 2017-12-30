@@ -199,7 +199,7 @@ begin
     Textures   := TDoomTextures.Create;
 
     if GodMode then
-      iImage := LoadImage('font10x18.png')
+      iImage := LoadImage('fonts\font10x18.png')
     else
     begin
       iCoreData := TVDataFile.Create(DataPath+'doomrl.wad');

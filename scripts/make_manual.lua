@@ -1,6 +1,6 @@
 local version = "?"
-local manual_file = io.open( "../manual.txt", "w" )
-local help_files = { "doomrl.txt", "intro.hlp", "start.hlp", "keys.hlp", "feedback.hlp", "credits.hlp", "disclaim.hlp" }
+local manual_file = io.open( "../bin/manual.txt", "w" )
+local help_files = { "../help/manual_header.txt", "../help/intro.hlp", "../help/start.hlp", "../help/keys.hlp", "../help/feedback.hlp", "../help/credits.hlp", "../help/disclaim.hlp" }
 
 function write_to_manual( file_name )
 	local file = io.open( file_name )
@@ -15,7 +15,7 @@ function write_to_manual( file_name )
 end
 
 do
-	local version_file = io.open( "../version.txt" )
+	local version_file = io.open( "../doc/version.txt" )
 	version = version_file:read()
 	version_file:close()
 end

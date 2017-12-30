@@ -368,8 +368,10 @@ begin
 end;
 
 procedure TDoomLua.ReadWad(WADName : string);
-var T1,T2,T3  : TStream;
-    iProgBase : DWord;
+var T1,T2,T3    : TStream;
+    iProgBase   : DWord;
+    LuaPath     : AnsiString;
+    LuaCorePath : AnsiString;
 begin
   FCoreData := TVDataFile.Create(DataPath+'core.wad');
   FMainData := TVDataFile.Create(DataPath+WADName);
@@ -378,13 +380,16 @@ begin
   iProgBase := IO.LoadCurrent;
   IO.LoadProgress(iProgBase + 10);
 
+  LuaPath := '..' + DirectorySeparator + 'lua';
+  LuaCorePath := LuaPath + DirectorySeparator + 'core';
+
   if GodMode then
   begin
-    RegisterModule( 'core', 'core' + DirectorySeparator );
-    RegisterModule( 'doomrl', 'lua' + DirectorySeparator );
-    LoadFile( 'core' + DirectorySeparator + 'core.lua' );
+    RegisterModule( 'core', LuaCorePath + DirectorySeparator );
+    RegisterModule( 'doomrl', LuaPath + DirectorySeparator );
+    LoadFile( LuaCorePath + DirectorySeparator + 'core.lua' );
     IO.LoadProgress(iProgBase + 20);
-    LoadFile( 'lua' + DirectorySeparator + 'main.lua' );
+    LoadFile( LuaPath + DirectorySeparator + 'main.lua' );
     IO.LoadProgress(iProgBase + 30);
     if GraphicsVersion and (not SpriteMap.Loaded) then
       Textures.LoadTextureFolder('graphics');

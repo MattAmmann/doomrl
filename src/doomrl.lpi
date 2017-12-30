@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="9"/>
+    <Version Value="10"/>
     <PathDelim Value="\"/>
     <General>
       <Flags>
@@ -13,7 +13,9 @@
       <MainUnit Value="0"/>
       <Title Value="Doom, the Roguelike"/>
       <UseAppBundle Value="False"/>
-      <Icon Value="0"/>
+      <Resources Count="1">
+        <Resource_0 FileName="..\bin\graphics\doomrl.ico" Type="ICON" ResourceName="MAINICON"/>
+      </Resources>
     </General>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
@@ -21,7 +23,7 @@
       <RevisionNr Value="9"/>
       <BuildNr Value="6"/>
       <CharSet Value="0000"/>
-      <StringTable CompanyName="ChaosForge" ProductName="Doom, the Roguelike" LegalCopyright="(c) 2002-2012 by Kornel Kisielewicz" ProductVersion="" FileDescription="Doom, the Roguelike"/>
+      <StringTable CompanyName="ChaosForge" ProductName="Doom, the Roguelike" LegalCopyright="(c) 2002-2012 by Kornel Kisielewicz" FileDescription="Doom, the Roguelike"/>
     </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="default" Default="True"/>
@@ -38,7 +40,7 @@
         <LaunchingApplication PathPlusParams="C:\Windows\system32\cmd.exe /C &quot;${TargetCmdLine}&quot;"/>
       </local>
     </RunParams>
-    <Units Count="32">
+    <Units Count="30">
       <Unit0>
         <Filename Value="doomrl.pas"/>
         <IsPartOfProject Value="True"/>
@@ -108,65 +110,57 @@
         <IsPartOfProject Value="True"/>
       </Unit16>
       <Unit17>
-        <Filename Value="..\bin\version.txt"/>
+        <Filename Value="doomanimation.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit17>
       <Unit18>
-        <Filename Value="doomanimation.pas"/>
+        <Filename Value="doomnet.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit18>
       <Unit19>
-        <Filename Value="doomnet.pas"/>
+        <Filename Value="doomconfig.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit19>
       <Unit20>
-        <Filename Value="doomconfig.pas"/>
+        <Filename Value="doommodule.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit20>
       <Unit21>
-        <Filename Value="doommodule.pas"/>
+        <Filename Value="doominventory.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit21>
       <Unit22>
-        <Filename Value="..\bin\version_api.txt"/>
+        <Filename Value="doomhooks.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit22>
       <Unit23>
-        <Filename Value="doominventory.pas"/>
+        <Filename Value="doomio.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit23>
       <Unit24>
-        <Filename Value="doomhooks.pas"/>
+        <Filename Value="doomviews.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit24>
       <Unit25>
-        <Filename Value="doomio.pas"/>
+        <Filename Value="doommenuview.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit25>
       <Unit26>
-        <Filename Value="doomviews.pas"/>
+        <Filename Value="doomtextures.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit26>
       <Unit27>
-        <Filename Value="doommenuview.pas"/>
+        <Filename Value="doomspritemap.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit27>
       <Unit28>
-        <Filename Value="doomtextures.pas"/>
+        <Filename Value="..\bin\core\constants.lua"/>
         <IsPartOfProject Value="True"/>
       </Unit28>
       <Unit29>
-        <Filename Value="doomspritemap.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit29>
-      <Unit30>
-        <Filename Value="..\bin\core\constants.lua"/>
-        <IsPartOfProject Value="True"/>
-      </Unit30>
-      <Unit31>
         <Filename Value="..\..\fpcvalkyrie\src\vnetwork.pas"/>
         <IsPartOfProject Value="True"/>
-      </Unit31>
+      </Unit29>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -176,7 +170,7 @@
       <Filename Value="..\bin\doomrl"/>
     </Target>
     <SearchPaths>
-      <IncludeFiles Value="..\bin;..\bin\lua;..\..\fpcvalkyrie\libs;..\..\fpcvalkyrie\src;$(ProjOutDir)"/>
+      <IncludeFiles Value="..\bin;..\bin\lua;..\lua;..\lua\core;..\..\fpcvalkyrie\libs;..\..\fpcvalkyrie\src;$(ProjOutDir)"/>
       <OtherUnitFiles Value="..\..\fpcvalkyrie\libs;..\..\fpcvalkyrie\src"/>
       <UnitOutputDirectory Value="..\tmp"/>
     </SearchPaths>

@@ -1,6 +1,6 @@
 #!/usr/bin/lua
-xpcall( function() dofile( "config.lua") end, function() end )
-VALKYRIE_ROOT = VALKYRIE_ROOT or os.getenv("FPCVALKYRIE_ROOT") or "../fpcvalkyrie/"
+VALKYRIE_ROOT  = "../fpcvalkyrie/"
+OS             = "WINDOWS"
 dofile (VALKYRIE_ROOT.."scripts/lua_make.lua")
 
 makefile = {
@@ -20,7 +20,7 @@ makefile = {
 		},
 	},
 	pre_build = function()
-		local v = make.readversion( "bin/version.txt" )
+		local v = make.readversion( "doc/version.txt" )
 		local s = make.svnrevision()
 		make.writeversion( "src/version.inc", v, s )
 		--make.svncheck(s)
@@ -35,8 +35,8 @@ makefile = {
 			files = { "config.lua" },
 			os = {
 				WINDOWS = { "fmod64.dll", "fmod.dll", "lua5.1.dll", "zlib1.dll", "SDL.dll", "SDL_image.dll", "libpng12.dll", "doomrl_console.bat" },
-				LINUX   = { "unix_notes.txt", "doomrl_gnome-terminal", "doomrl_konsole", "doomrl_xterm" },
-				MACOSX  = { "unix_notes.txt" },
+				LINUX   = { "doc/unix_notes.txt", "doomrl_gnome-terminal", "doomrl_konsole", "doomrl_xterm" },
+				MACOSX  = { "doc/unix_notes.txt" },
 			},
 			subdirs = {
 				backup     = "!readme.txt",
@@ -46,15 +46,15 @@ makefile = {
 				wav        = "*.wav",
 				music      = "*.mid",
 			},
-			other = { "keybindings.lua", "colors.lua", "sound.lua", "music.lua", "manual.txt", "version.txt", "version_api.txt", "doomrl.wad", "core.wad" },
+			other = { "keybindings.lua", "colors.lua", "sound.lua", "music.lua", "manual.txt", "doc/version.txt", "doc/version_api.txt", "doomrl.wad", "core.wad" },
 		},
 		hq = {
 			exec = { "doomrl" },
 			files = { { "confighq.lua", "config.lua" } },
 			os = {
 				WINDOWS = { "fmod64.dll", "fmod.dll", "lua5.1.dll", "zlib1.dll", "SDL.dll", "SDL_image.dll", "libpng12.dll", "doomrl_console.bat" },
-				LINUX   = { "unix_notes.txt", "doomrl_gnome-terminal", "doomrl_konsole", "doomrl_xterm" },
-				MACOSX  = { "unix_notes.txt" },
+				LINUX   = { "doc/unix_notes.txt", "doomrl_gnome-terminal", "doomrl_konsole", "doomrl_xterm" },
+				MACOSX  = { "doc/unix_notes.txt" },
 			},
 			subdirs = {
 				backup     = "!readme.txt",
@@ -64,7 +64,7 @@ makefile = {
 				wavhq      = "*.wav",
 				mp3        = "*.mp3",
 			},
-			other = { "keybindings.lua", "colors.lua", "soundhq.lua", "musichq.lua", "manual.txt", "version.txt", "version_api.txt", "doomrl.wad", "core.wad" },
+			other = { "keybindings.lua", "colors.lua", "soundhq.lua", "musichq.lua", "manual.txt", "doc/version.txt", "doc/version_api.txt", "doomrl.wad", "core.wad" },
 		}
 	},
 	commands = {
@@ -105,7 +105,7 @@ makefile = {
 		publisher   = "ChaosForge",
 		license     = "bin\\license.txt",
 		info_after  = "bin\\install_after.txt",
-		iss_icon    = "src\\icon.ico",
+		iss_icon    = "bin\\graphics\\doomrl.ico",
 		iss_image   = "install-banner.bmp",
 		iss_simage  = "install-logo.bmp",
 		iss_url     = "http://www.chaosforge.org/",

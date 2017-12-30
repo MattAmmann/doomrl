@@ -3,7 +3,7 @@
 --  If you mess up something overwrite with a new godmode.lua.
 -- ----------------------------------------------------------------------
 
-dofile "core/commands.lua"
+dofile "../lua/core/commands.lua"
 dofile "colors.lua"
 
 -- pick here what music set to use (see music.lua and musicmp3.lua)
