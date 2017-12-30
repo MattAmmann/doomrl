@@ -1,6 +1,6 @@
 #!/usr/bin/lua
-xpcall( function() dofile( "config.lua") end, function() end )
-VALKYRIE_ROOT = VALKYRIE_ROOT or os.getenv("FPCVALKYRIE_ROOT") or "../fpcvalkyrie/"
+VALKYRIE_ROOT  = "../fpcvalkyrie/"
+OS             = "WINDOWS"
 dofile (VALKYRIE_ROOT.."scripts/lua_make.lua")
 
 makefile = {
