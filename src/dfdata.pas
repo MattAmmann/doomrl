@@ -94,7 +94,7 @@ type
 
 
 const
-{$include ../bin/core/constants.lua}
+{$include constants.lua}
 {$include dkey.inc}
 
 const
@@ -169,7 +169,7 @@ var
   // 0-25 range
 
 const
-{$include ../bin/core/commands.lua}
+{$include commands.lua}
   COMMANDS_MOVE        = [COMMAND_WALKNORTH,COMMAND_WALKSOUTH,
                           COMMAND_WALKEAST,COMMAND_WALKWEST,
                           COMMAND_WALKNE,COMMAND_WALKSE,

@@ -368,8 +368,9 @@ begin
 end;
 
 procedure TDoomLua.ReadWad(WADName : string);
-var T1,T2,T3  : TStream;
-    iProgBase : DWord;
+var T1,T2,T3    : TStream;
+    iProgBase   : DWord;
+    LuaCorePath : AnsiString;
 begin
   FCoreData := TVDataFile.Create(DataPath+'core.wad');
   FMainData := TVDataFile.Create(DataPath+WADName);
@@ -378,11 +379,13 @@ begin
   iProgBase := IO.LoadCurrent;
   IO.LoadProgress(iProgBase + 10);
 
+  LuaCorePath := '..' + DirectorySeparator + 'lua' + DirectorySeparator + 'core';
+
   if GodMode then
   begin
-    RegisterModule( 'core', 'core' + DirectorySeparator );
+    RegisterModule( 'core', LuaCorePath + DirectorySeparator );
     RegisterModule( 'doomrl', 'lua' + DirectorySeparator );
-    LoadFile( 'core' + DirectorySeparator + 'core.lua' );
+    LoadFile( LuaCorePath + DirectorySeparator + 'core.lua' );
     IO.LoadProgress(iProgBase + 20);
     LoadFile( 'lua' + DirectorySeparator + 'main.lua' );
     IO.LoadProgress(iProgBase + 30);

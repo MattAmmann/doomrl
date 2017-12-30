@@ -170,7 +170,7 @@
       <Filename Value="..\bin\doomrl"/>
     </Target>
     <SearchPaths>
-      <IncludeFiles Value="..\bin;..\bin\lua;..\..\fpcvalkyrie\libs;..\..\fpcvalkyrie\src;$(ProjOutDir)"/>
+      <IncludeFiles Value="..\bin;..\bin\lua;..\lua;..\lua\core;..\..\fpcvalkyrie\libs;..\..\fpcvalkyrie\src;$(ProjOutDir)"/>
       <OtherUnitFiles Value="..\..\fpcvalkyrie\libs;..\..\fpcvalkyrie\src"/>
       <UnitOutputDirectory Value="..\tmp"/>
     </SearchPaths>
