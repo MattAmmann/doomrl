@@ -15,7 +15,7 @@ function write_to_manual( file_name )
 end
 
 do
-	local version_file = io.open( "../bin/version.txt" )
+	local version_file = io.open( "../doc/version.txt" )
 	version = version_file:read()
 	version_file:close()
 end

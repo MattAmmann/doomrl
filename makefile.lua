@@ -20,7 +20,7 @@ makefile = {
 		},
 	},
 	pre_build = function()
-		local v = make.readversion( "bin/version.txt" )
+		local v = make.readversion( "doc/version.txt" )
 		local s = make.svnrevision()
 		make.writeversion( "src/version.inc", v, s )
 		--make.svncheck(s)
@@ -46,7 +46,7 @@ makefile = {
 				wav        = "*.wav",
 				music      = "*.mid",
 			},
-			other = { "keybindings.lua", "colors.lua", "sound.lua", "music.lua", "manual.txt", "version.txt", "version_api.txt", "doomrl.wad", "core.wad" },
+			other = { "keybindings.lua", "colors.lua", "sound.lua", "music.lua", "manual.txt", "doc/version.txt", "doc/version_api.txt", "doomrl.wad", "core.wad" },
 		},
 		hq = {
 			exec = { "doomrl" },
@@ -64,7 +64,7 @@ makefile = {
 				wavhq      = "*.wav",
 				mp3        = "*.mp3",
 			},
-			other = { "keybindings.lua", "colors.lua", "soundhq.lua", "musichq.lua", "manual.txt", "version.txt", "version_api.txt", "doomrl.wad", "core.wad" },
+			other = { "keybindings.lua", "colors.lua", "soundhq.lua", "musichq.lua", "manual.txt", "doc/version.txt", "doc/version_api.txt", "doomrl.wad", "core.wad" },
 		}
 	},
 	commands = {
