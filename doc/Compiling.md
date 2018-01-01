@@ -16,7 +16,6 @@
 9)	Copy the DoomGameHQ\mp3 and DoomGameHQ\wavhq folders to SourceCode\bin.
 10)	Copy the DoomGameLQ\music and DoomGameLQ\wav folders to SourceCode\bin.
 11)	Create a folder named 'tmp' in SourceCode.
-12)	[Optional] Rename SourceCode\bin\config.lua to configlq.lua and SourceCode\bin\confighq.lua to SourceCode\bin\config.lua. The GitHub repository uses the low quality audio, by default. This step allows DoomRL to run with the HQ audio files.
 
 At this point, your folder structure should look like this. I've included only the first two subfolders of the folders in DoomProject:
 * DoomProject

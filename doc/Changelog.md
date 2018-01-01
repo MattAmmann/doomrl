@@ -3,6 +3,7 @@
 
 Change | Description | Author | Date
 -- | -- | -- | -- |
+mod|All user data separated from game data and moved to its own folder, \/bin\/userdata. High quality sound and music are now the default configs.|Matt Ammann|12/31/2017
 code|Repository re-organized. Many files were moved out of \/bin and into appropriate folders.|Matt Ammann|12/30/2017 
 fix|Fixed the menu sound playing when Exit is selected from the main menu. The game terminating was cutting off the sound.|Matt Ammann|12/30/2017
 mod|All assemblies are now moddable when the player takes the Whizkid 2 trait, regardless of when the assemblies were created. Assemblies can only be modded once, as in vanilla DRL.|Matt Ammann|12/25/2017

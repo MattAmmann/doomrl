@@ -1,4 +1,4 @@
-dofile "lua/functions.lua"
+dofile "../lua/core/functions.lua"
 dofile "lua_check_config.lua"
 
 function table.set( t, k, v )

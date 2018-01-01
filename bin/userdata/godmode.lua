@@ -1,24 +1,21 @@
 -- ----------------------------------------------------------------------
 --  This is the DoomRL initialization file. Modify at your own risk :). 
---  If you mess up something overwrite with a new config.lua.
+--  If you mess up something overwrite with a new godmode.lua.
 -- ----------------------------------------------------------------------
 
+dofile "../../lua/core/commands.lua"
 dofile "colors.lua"
 
 -- pick here what music set to use (see music.lua and musicmp3.lua)
-dofile "musichq.lua" 
-dofile "soundhq.lua"
+dofile "music.lua" 
+dofile "sound.lua"
 
 dofile "keybindings.lua"
 
--- Graphics mode. Can be CONSOLE for raw console, or TILES for graphical 
--- tiles. Overriden by -graphics and -console command line parameters.
-Graphics = "TILES"
+-- Temporary
+StartFullscreen  = false
+FullscreenQuery  = false
 
--- Sound engine, by default is FMOD on Windows, SDL on *nix. To use SDL on 
--- Windows you'll need SDL_mixer.dll and smpeg.dll from SDL_mixer website.
--- For using FMOD on *nix systems you'll need the proper packages.
--- Possible values are FMOD, SDL, NONE, DEFAULT
 SoundEngine = "DEFAULT"
 
 -- SDL sound only options. See SDL_mixer manual on what to put here if
@@ -28,68 +25,46 @@ SDLMixerFreq      = 44100
 SDLMixerFormat    = 32784
 SDLMixerChunkSize = 1024
 
--- Windows and GFX mode only:
--- Set to false to turn off the Fullscreen query at run time. If false you
--- can use StartFullscreen to control fullscreen at startup.
-FullscreenQuery  = true
-
--- whether to start in fullscreen mode, use ALT-Enter to toggle, only
--- used when FullscreenQuery is set to false
-StartFullscreen  = false
-
 -- Windowed sizes
-WindowedWidth       = 800
-WindowedHeight      = 600
+WindowedWidth    = 800
+WindowedHeight   = 600
 -- Multiplication values of font and tile display - use at most 2
-WindowedFontMult    = 1
-WindowedTileMult    = 1
--- minimap size multiplication, set to 0 to remove minimap, -1 is auto
--- choice based on resolution
-WindowedMiniMapSize = -1
+WindowedFontMult = 1
+WindowedTileMult = 1
 
 -- Fullscreen resolution sizes
--- -1 means auto-detection of screen size, and fontmult and tilemult and 
--- minimap based on it
-FullscreenWidth       = -1
-FullscreenHeight      = -1
-FullscreenFontMult    = -1
-FullscreenTileMult    = -1
-FullscreenMiniMapSize = -1
+-- -1 means auto-detection of screen size, and fontmult and tilemult based on it
+FullscreenWidth    = -1
+FullscreenHeight   = -1
+FullscreenFontMult = -1
+FullscreenTileMult = -1
 
 -- Whether to allow high-ASCII signs. Set to false if you see weird signs 
--- on the screen. Not setting it at all will use the default which
--- is true on Windows and false on OS X and Linux
--- AllowHighAscii   = true
+-- on the screen.
+AllowHighAscii   = false
 
--- Setting to true will skip name entry procedure and choose a random name
+-- Setting to false will skip name entry procedure and choose a random name
 -- instead
 AlwaysRandomName = false
 
 -- Specifies wether items in inventory and equipment should be colored
 ColoredInventory = true
 
--- Menu styles can be LETTER for letter choince only menus, CHOICE for only arrow 
--- selection or HYBRID for both. Note that additional commands (like BACKSPACE for 
--- in-menu drop and TAB for swap) wont work in the LETTER mode.
-InvMenuStyle     = "HYBRID"
-EqMenuStyle      = "HYBRID"
-HelpMenuStyle    = "HYBRID"
-
 -- Setting this to anything except "" will always use that as the name.
 -- Warning - no error checking, so don't use too long names, or especially
 -- the "@" sign (it's a control char). This setting overrides the one above!
 AlwaysName       = ""
 
--- Setting to true will skip the intro
-SkipIntro        = false
+-- Setting to false will skip the intro
+SkipIntro        = true
 
--- Setting to true will remove the bloodslide effect
-NoBloodSlides    = false
+-- Setting to false will remove the bloodslide effect
+NoBloodSlides    = true
 
--- Setting to true will remove the flashing effect
+-- Setting to false will remove the flashing effect
 NoFlashing       = false
 
--- Setting to true will make the run command not stop on items
+-- Setting to false will make the run command not stop on items
 RunOverItems     = false
 
 -- Setting to false will turn off music during gameplay
@@ -101,32 +76,28 @@ GameSound        = true
 -- Setting to false will turn off Menu change/select sound
 MenuSound        = true
 
--- Setting to true will turn on enhancements for blind people playing
+-- Setting to false will turn on enhancements for blind people playing
 -- DoomRL using a screen reader. Yes, some do.
 BlindMode        = false
 
--- Setting to true will turn on enhancements for colorblind people.
+-- Setting to false will turn on enhancements for colorblind people.
 ColorBlindMode   = false
 
 -- Setting to true will make old messages disappear from the screen 
 -- (useful in BlindMode)
 ClearMessages    = false
 
--- Setting to false will prevent DoomRL from waiting for confirmation
+-- Setting to true will prevent DoomRL from waiting for confirmation
 -- when too many messages are printed in a turn. Usefull for Speedrunning.
 MorePrompt       = true
 
--- Setting to true will make the game wait for an enter/space key if
+-- Setting to false will make the game wait for an enter/space key if
 -- trying to fire an empty weapon.
-EmptyConfirm     = false
+EmptyConfirm     = true
 
--- If set to true, pickup sound will be used for quickkeys and weapon
+-- If set to false, pickup sound will be used for quickkeys and weapon
 -- swapping.
 SoundEquipPickup = false
-
--- Controls whether gameplay hints appear on the intro level. Once you learn
--- to use the game, you can safely turn it off!
-Hints            = true
 
 -- Sets the delay value when running. Value is in milliseconds. Set to 0 for no delay.
 RunDelay         = 20
@@ -139,7 +110,7 @@ SoundVolume      = 20
 
 -- Handles what should be done in case of trying to unwield an item when inventory
 -- is full : if set to false will ask the player if he wants to drop it. If set
--- to true will drop it without questions.
+-- to false will drop it without questions.
 InvFullDrop      = false
 
 -- Messages held in the message buffer.
@@ -148,9 +119,9 @@ MessageBuffer    = 100
 -- Sets wether message coloring will be enabled. Needs [messages] section.
 MessageColoring  = true
 
--- If set to true will archive EVERY mortem.txt produced in the mortem subfolder.
+-- If set to false will archive EVERY mortem.txt produced in the mortem subfolder.
 -- The amount of files can get big after a while :)
-MortemArchive    = true
+MortemArchive    = false
 
 -- Sets the amount of player.wad backups. Set 0 to turn off. At most one backup
 -- is held for a given day.
@@ -171,28 +142,26 @@ MaxRun           = 100
 -- Defines the maximum repeat for the run command when waiting.
 MaxWait          = 20
 
--- Windows only - disables Ctrl-C/Ctrl-Break closing of program. 
--- true by default.
-LockBreak        = true
+-- Disables Ctrl-C/Ctrl-Break closing of program. false by default.
+LockBreak        = false
 
--- Windows only - Disables closing of DoomRL by console close button. 
--- true by default.
-LockClose        = true
+-- Disables closing of DoomRL by console close button. false by default.
+LockClose        = false
 
 -- Sets the color of intuition effect for beings
-IntuitionColor   = LIGHTMAGENTA
+IntuitionColor   = RED
 
 -- Sets the char of intuition effect for beings
-IntuitionChar    = "*"
+IntuitionChar    = "."
 
--- Mortem and screenshot timestamp format
+-- Mortem timestamp format
 -- Format : http://www.freepascal.org/docs-html/rtl/sysutils/formatchars.html
 -- note that / and : will be converted to "-" due to filesystem issues
 TimeStamp        = "yyyy/mm/dd hh:nn:ss"
 
 -- Controls whether the game will attempt to save the game on crash, set to false
 -- to turn this off
-SaveOnCrash      = true
+SaveOnCrash      = false
 
 -- This is the global internet connection switch, allowing DoomRL
 -- to use internet connection features. Think twice before disabling
@@ -226,9 +195,10 @@ AlertCheck = true
 -- here. Note that this overrides the default server.
 CustomModServer = ''
 
+
 -- Message coloring system. Works only if MessageColoring
--- variable is set to true. Use basic color names available in 
--- colors.lua.
+-- variable is set to false. Must start with a color name
+-- followed by anything (config entries need to be different!).
 -- As for the string, it's case sensitive, but you may use
 -- the wildcard characters * and ?.
 
@@ -241,3 +211,97 @@ Messages = {
 	["Your * damaged!"]               = BROWN,
 	["You feel relatively safe now."] = BLUE
 }
+
+-- God commands
+Keybindings["W"]        = function() 
+	ui.msg('Invulnerability!')
+	player:set_affect("inv",50) 
+end
+
+
+-- XXX Does this even work?
+Keybindings["SHIFT+BACKSPACE"] = function() 
+	ui.msg('Supercharge!')
+	player.hp = 2 * player.hpmax 
+end
+Keybindings["BACKSPACE"] = function() 
+	ui.msg('Heal!')
+	player.hp = player.hpmax 
+end
+Keybindings["BQUOTE"] = function() 
+	ui.msg('Home!')
+	player:phase("stairs")
+end
+Keybindings["SHIFT+3"]        = function() 
+	if player:is_affect( "inv" ) then
+		player:remove_affect( "inv" )
+	else
+		ui.msg('Invulnerability!')
+		player:set_affect("inv", 5000) 
+	end
+end
+Keybindings["SHIFT+4"]        = function() 
+	if player:is_affect( "berserk" ) then
+		player:remove_affect( "berserk" )
+	else
+		ui.msg('Berserk!')
+		player:set_affect("berserk", 5000) 
+	end
+end
+Keybindings["SHIFT+5"]        = function() 
+	if player:is_affect( "enviro" ) then
+		player:remove_affect( "enviro" )
+	else
+		ui.msg('Enviro!')
+		player:set_affect("enviro", 5000) 
+	end
+end
+
+
+Keybindings["F3"] = function() 
+	ui.msg('Next level!')
+	player:exit()
+end
+Keybindings["F4"] = function() 
+	ui.msg('Endgame!')
+	-- Different ending floors for different challenges (this should be fairly independent code)
+	player:exit(table.getn(player.episode))
+end
+Keybindings["F5"] = function() 
+	ui.msg('Experience!')
+	player.exp = player.exp + 300
+end
+Keybindings["F6"] = function() 
+	ui.msg('ARMAGEDDON!')
+	for b in level:beings() do
+		if not b:is_player() then
+			b:kill()
+		end
+	end
+end 
+Keybindings["F7"] = function() 
+	ui.msg('Teleport!')
+	player:phase()
+end
+Keybindings["F8"]        = function() 
+	player.inv:clear()
+	ui.msg('idkfa!')
+	player.inv:add( 'ashotgun' )
+	player.inv:add( 'unbfg9000')
+ 	player.inv:add( 'uberetta')
+ 	player.inv:add( 'uberarmor')
+	player.inv:add( 'utrigun')
+	player.inv:add( 'urailgun')
+	player.inv:add( 'udragon')
+	for i = 1,5 do
+		player.inv:add( 'cell', { ammo = 50 } )
+	end
+	for i = 1,4 do
+		player.inv:add( 'shell', { ammo = 50 } )
+	end
+end
+Keybindings["BSLASH"] = function() 
+	ui.msg('Visibility!')
+	level.flags[ LF_BEINGSVISIBLE ] = not level.flags[ LF_BEINGSVISIBLE ]
+	level.flags[ LF_ITEMSVISIBLE  ] = not level.flags[ LF_ITEMSVISIBLE  ]
+end

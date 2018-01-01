@@ -136,7 +136,7 @@ begin
   FreeAndNil( Config );
   IO.LoadStart;
   ColorOverrides := TIntHashMap.Create( );
-  Config := TDoomConfig.Create( ConfigurationPath+ConfigFile, True );
+  Config := TDoomConfig.Create( UserDataPath+ConfigFile, True );
   IO.Configure( Config, True );
 
   FCoreHooks := [];
@@ -155,8 +155,8 @@ begin
   UI.CreateMessageWriter( Config );
   LoadModule( True );
 
-  if GodMode and FileExists(ConfigurationPath+'god.lua') then
-    Lua.LoadFile(ConfigurationPath+'god.lua');
+  if GodMode and FileExists(UserDataPath+'god.lua') then
+    Lua.LoadFile(UserDataPath+'god.lua');
   HOF.Init;
   FLevel := TLevel.Create;
   if not GraphicsVersion then
@@ -218,7 +218,7 @@ begin
   FreeAndNil(CP);
 
   ColorOverrides := nil;
-  Config := TDoomConfig.Create( ConfigurationPath+ConfigFile, False );
+  Config := TDoomConfig.Create( UserDataPath+ConfigFile, False );
 end;
 
 procedure TDoom.CreateIO;
@@ -259,7 +259,7 @@ begin
   Doom.Load;
 
   // Open the 'Welcome' splash screen on first run of the game
-  if not FileExists(ConfigurationPath+'player.wad') then
+  if not FileExists(UserDataPath+'player.wad') then
     IO.RunUILoop( TMainMenuViewer.CreateFirst( IO.Root ) );
 
   IO.RunUILoop( TMainMenuViewer.CreateMain( IO.Root ) );

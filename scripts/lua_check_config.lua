@@ -1,7 +1,7 @@
 pascal_method_files   = { "../src/dfplayer.pas", "../src/dfbeing.pas", "../src/dfitem.pas", "../src/dfthing.pas" }
 pascal_function_files = { "../src/doomlua.pas", "../src/dflevel.pas", "../src/dfdungen.pas"  }
-lua_files             = { "lua/main.lua", "lua/core.lua" }
-lua_config_files      = { "lua/constants.lua", "lua/enum.lua" }
+lua_files             = { "../lua/main.lua", "../lua/core/core.lua" }
+lua_config_files      = { "../lua/constants.lua", "../lua/enum.lua" }
 
 parse_merges = {
 	{ "item", "thing" },

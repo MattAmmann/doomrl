@@ -391,6 +391,7 @@ var iFName : AnsiString;
     iExt   : AnsiString;
     iCount : DWord;
     iCon   : TUIConsole;
+    iScreenshotPath : AnsiString;
 begin
   if GraphicsVersion
      then iExt := '.png'
@@ -398,11 +399,12 @@ begin
 
   iName := 'DoomRL';
   if Player <> nil then iName := Player.Name;
-  iFName := 'screenshot'+PathDelim+ToProperFilename('['+FormatDateTime(Option_TimeStamp,Now)+'] '+iName)+iExt;
+  iScreenshotPath := UserDataPath+'screenshot'+PathDelim;
+  iFName := iScreenshotPath+ToProperFilename('['+FormatDateTime(Option_TimeStamp,Now)+'] '+iName)+iExt;
   iCount := 1;
   while FileExists(iFName) do
   begin
-    iFName := 'screenshot'+PathDelim+ToProperFilename('['+FormatDateTime(Option_TimeStamp,Now)+'] '+iName)+'-'+IntToStr(iCount)+iExt;
+    iFName := iScreenshotPath+ToProperFilename('['+FormatDateTime(Option_TimeStamp,Now)+'] '+iName)+'-'+IntToStr(iCount)+iExt;
     Inc(iCount);
   end;
 

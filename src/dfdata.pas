@@ -10,7 +10,7 @@ interface
 uses Classes, SysUtils, idea, DOM, vgenerics, vcolor, vutil, vrltools,
      doomconfig, vuitypes;
 
-const ConfigurationPath : AnsiString = '';
+const UserDataPath : AnsiString = '';
       DataPath          : AnsiString = '';
       SaveFilePath      : AnsiString = '';
 

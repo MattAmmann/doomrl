@@ -14,7 +14,7 @@ Copyright (c) 2002-2006 by Kornel "Anubis" Kisielewicz
 [todo] warning-only mode?
 [todo] dryrun possibility of the wad file! for modders and stats generation
 
-[todo] Copy configs from DataPath to ConfigurationPath if not present
+[todo] Copy configs from DataPath to UserDataPath if not present
 [todo] Set proper paths on unix, create directories if needed
 }
 
@@ -52,7 +52,7 @@ try
     {$IFDEF OSX_APP_BUNDLE}
     RootPath := GetResourcesPath();
     DataPath          := RootPath;
-    ConfigurationPath := RootPath;
+    UserDataPath      := RootPath + PathDelim + 'userdata';
     SaveFilePath      := RootPath;
     Logger.Log( LOGINFO, 'Root path set to - '+RootPath );
     {$ENDIF}
@@ -64,8 +64,8 @@ try
     {$IFDEF Windows}
     RootPath := ExtractFilePath( ParamStr(0) );
     DataPath          := RootPath;
-    ConfigurationPath := RootPath;
-    SaveFilePath      := RootPath;
+    UserDataPath := RootPath + 'userdata\';
+    SaveFilePath      := UserDataPath;
     Logger.Log( LOGINFO, 'Root path set to - '+RootPath );
     {$ENDIF}
 
