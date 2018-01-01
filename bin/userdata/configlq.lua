@@ -6,8 +6,8 @@
 dofile "colors.lua"
 
 -- pick here what music set to use (see music.lua and musicmp3.lua)
-dofile "music.lua" 
-dofile "sound.lua"
+dofile "musiclq.lua" 
+dofile "soundlq.lua"
 
 dofile "keybindings.lua"
 

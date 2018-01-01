@@ -1,7 +1,7 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="9"/>
+    <Version Value="10"/>
     <PathDelim Value="\"/>
     <General>
       <Flags>
@@ -32,7 +32,6 @@
       <Unit0>
         <Filename Value="makewad.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="makewad"/>
       </Unit0>
       <Unit1>
         <Filename Value="..\bin\constants.inc"/>
@@ -47,19 +46,14 @@
       <Filename Value="..\bin\makewad"/>
     </Target>
     <SearchPaths>
+      <IncludeFiles Value="..\lua;..\lua\core"/>
       <OtherUnitFiles Value="..\..\fpcvalkyrie\src;..\..\fpcvalkyrie\libs"/>
-      <UnitOutputDirectory Value="../tmp"/>
+      <UnitOutputDirectory Value="..\tmp"/>
     </SearchPaths>
     <Parsing>
       <SyntaxOptions>
         <UseAnsiStrings Value="False"/>
       </SyntaxOptions>
     </Parsing>
-    <Other>
-      <CompilerMessages>
-        <UseMsgFile Value="True"/>
-      </CompilerMessages>
-      <CompilerPath Value="$(CompPath)"/>
-    </Other>
   </CompilerOptions>
 </CONFIG>

@@ -14,7 +14,7 @@ bin/userdata/backup/*
 bin/userdata/info.xml
 bin/userdata/modules/*
 !bin/userdata/modules/!readme.txt
-!bin/userdata/modules/classic.module/*
+!bin/userdata/modules/classic.module*
 bin/userdata/mortem.txt
 bin/userdata/mortem/*
 !bin/userdata/mortem/!readme.txt
