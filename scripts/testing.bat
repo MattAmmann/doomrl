@@ -1,0 +1,13 @@
+@echo off
+cd ..\bin
+echo Testing Doom HQ...
+doomrl
+pause
+echo Testing Doom LQ...
+doomrl -config configlq.lua
+pause
+echo Testing Doom Console...
+doomrl -console
+pause
+echo Testing Doom Godmode...
+doomrl -god
