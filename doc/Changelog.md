@@ -3,6 +3,8 @@
 
 Change | Description | Author | Date
 -- | -- | -- | -- |
+mod|New config option created: 'AnimationSpeed'. Controls the duration of animations in tiles mode. 100 = normal speed, 0 = instant.|Tung Nguyen|1/3/2018
+mod|Condensed consecutive mouse move events to greatly speed up mouse aiming|Tung Nguyen|1/3/2018
 mod|All user data separated from game data and moved to its own folder, \/bin\/userdata. High quality sound and music are now the default configs.|Matt Ammann|12/31/2017
 code|Repository re-organized. Many files were moved out of \/bin and into appropriate folders.|Matt Ammann|12/30/2017 
 fix|Fixed the menu sound playing when Exit is selected from the main menu. The game terminating was cutting off the sound.|Matt Ammann|12/30/2017
