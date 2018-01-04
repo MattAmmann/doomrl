@@ -3,6 +3,10 @@
 
 Change | Description | Author | Date
 -- | -- | -- | -- |
+mod|Show target over player when in targeting mode (ASCII only)|Tung Nguyen|1/4/2018
+mod|Remember last target positions outside field of view|Tung Nguyen|1/4/2018
+mod|Skip RunDelay when run-waiting in ASCII mode|Tung Nguyen|1/4/2018
+mod|Added some enhanced terrain chars for high ASCII|Tung Nguyen|1/4/2018
 mod|New config option created: 'AnimationSpeed'. Controls the duration of animations in tiles mode. 100 = normal speed, 0 = instant.|Tung Nguyen|1/3/2018
 mod|Condensed consecutive mouse move events to greatly speed up mouse aiming|Tung Nguyen|1/3/2018
 mod|All user data separated from game data and moved to its own folder, \/bin\/userdata. High quality sound and music are now the default configs.|Matt Ammann|12/31/2017
