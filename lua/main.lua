@@ -246,7 +246,7 @@ function DoomRL.print_mortem()
 		if statistics.kills == statistics.max_kills then
 			player:mortem_print( " This ass-kicking marine killed all of them!" )
 	elseif statistics.kills + 1 == statistics.max_kills then
-			player:mortem_print (" He missed one kill to totally be ass-kicking." )
+			player:mortem_print (" He was one kill away from being a total ass-kicker." )
 	elseif statistics.kills == 0 then
 			player:mortem_print( " Poor pacifist, didn't even get a single kill..." )
 	elseif statistics.kills == 1 then
@@ -256,7 +256,7 @@ function DoomRL.print_mortem()
 	elseif ratio < 0.3    then
 			player:mortem_print( " Who gave him the ticket to Hell, anyway?" )
 	elseif ratio > 0.999  then
-			player:mortem_print( " A natural born killer!" )
+			player:mortem_print( " A natural-born killer!" )
 	elseif ratio > 0.99   then
 			player:mortem_print( " He was a real killing machine..." )
 	elseif ratio > 0.9    then
