@@ -4,7 +4,7 @@
 Change | Description | Author | Date
 -- | -- | -- | -- |
 fix|Current kill streak count uses correct value, instead of the 'best kill streak' count|Tung Nguyen|1/5/2018
-fix|Enemy kill count no longer leaks number of enemies in player info screen. [See commit for more details](f5e074502fe73781db99d9cf094e2604a04ba5e0).|Tung Nguyen|1/5/2018
+fix|Enemy kill count no longer leaks number of enemies in player info screen. [More details](https://github.com/MattAmmann/doomrl/commit/f5e074502fe73781db99d9cf094e2604a04ba5e0)|Tung Nguyen|1/5/2018
 fix|Added missing messages to Abyssal Plains and Chained Court that tell the player all monsters are dead.|Tung Nguyen|1/5/2018
 add|Double-tapping the 'run' key (COMMA by default) will now run-wait.|Tung Nguyen|1/5/2018
 fix|Reloading now uses the bottom-most ammo stack, when all stacks are of equal size.|Tung Nguyen|1/5/2018
